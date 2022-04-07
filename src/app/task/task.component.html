@@ -1,0 +1,14 @@
+<div>
+    <h3> Our To-Do List</h3>
+    <ul >
+       <div *ngFor="let task of tasks; let i=index">
+        <li>
+            {{task.name}} 
+            <br>
+            <button (click)='toogleDetails(i)'>Toggle Details</button>
+            <app-task-detail *ngIf='task.showDescription' [task]="task" ></app-task-detail>
+        </li>
+       </div>
+    </ul>
+    <p *ngIf="tasks.length>4"> Your tasks are many </p>
+</div>
