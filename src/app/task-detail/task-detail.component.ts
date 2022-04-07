@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+// import { EventEmitter } from 'stream';
 import { Task } from '../task';
 @Component({
   selector: 'app-task-detail',
@@ -7,6 +8,10 @@ import { Task } from '../task';
 })
 export class TaskDetailComponent implements OnInit {
  @Input()task:Task
+ @Output() isComplete= new EventEmitter<boolean>();
+ taskComplete(complete:boolean){
+   this.isComplete.emit(complete);
+ }
 
   constructor() { }
 

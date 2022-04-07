@@ -9,6 +9,11 @@ export class TaskComponent implements OnInit {
   toogleDetails(index){
     this.tasks[index].showDescription=!this.tasks[index].showDescription;
   }
+  completeTask(isComplete,index){
+    if(isComplete){
+      this.tasks.splice(index,1)
+    }
+  }
 
   tasks:Task[]= [
     new Task(1,"group work" , "Learning Typescript"),
