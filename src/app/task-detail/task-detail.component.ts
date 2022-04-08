@@ -7,12 +7,12 @@ import { Task } from '../task';
   styleUrls: ['./task-detail.component.css']
 })
 export class TaskDetailComponent implements OnInit {
- @Input()task:Task
+ @Input()task:Task;
  @Output() isComplete= new EventEmitter<boolean>();
  taskComplete(complete:boolean){
    this.isComplete.emit(complete);
  }
-
+ 
   constructor() { }
 
   ngOnInit(): void {

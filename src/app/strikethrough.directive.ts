@@ -1,13 +1,24 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef,HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appStrikethrough]'
 })
 export class StrikethroughDirective {
-
-  constructor(private elem:ElementRef) {}
+@HostListener('mouseenter') onMouseEnter(){
+  this.highlight('yellow');
+}
+@HostListener('mouseleave') onMouseLeave(){
+  this.highlight('green');
+}
+//   constructor(private elem:ElementRef) {}
   
-private textDeco(action:string){
-  this.elem.nativeElement.style.textDecoration= action;
+// private textDeco(action:string){
+//   this.elem.nativeElement.style.textDecoration= action;
+// }
+private highlight(color:string){
+  this.elem.nativeElement.style.backgroundColor=color;
 }
+constructor( private elem:ElementRef ){
+  this.elem.nativeElement.style.backgroundColor=' '
 }
+};
