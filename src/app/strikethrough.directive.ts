@@ -8,7 +8,7 @@ export class StrikethroughDirective {
   this.highlight('yellow');
 }
 @HostListener('mouseleave') onMouseLeave(){
-  this.highlight('green');
+  this.highlight('');
 }
 //   constructor(private elem:ElementRef) {}
   

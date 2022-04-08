@@ -1,12 +1,12 @@
 <!-- <p>task-form works!</p> -->
 
 <h2 class="text-center bg-primary ">Create a new Task</h2>
-<form>
+<form #ngtaskForm='ngForm'>
     <div class="form-group">
 
         <label for="name">Name</label>
-        <input type="text" required class="form-control" id="name">
-
+        <input type="text" required class="form-control" id="name" [(ngModel)]='newTask.name' name="name">
+        {{newTask.name}}
     </div>
     <div class="form-group">
 
@@ -14,11 +14,11 @@
         <textarea class="form-control" id="description" rows="4" required></textarea>
 
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="complete">Completion</label>
         <input type='date' id="complete" required>
 
-    </div>
+    </div> -->
 </form>
 <button class="btn btn-warning my-4">Add Task</button> 
 

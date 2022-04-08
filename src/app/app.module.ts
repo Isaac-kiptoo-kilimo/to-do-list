@@ -15,12 +15,13 @@ import { TaskFormComponent } from './task-form/task-form.component';
     TaskComponent,
     TaskDetailComponent,
     StrikethroughDirective,
-    TaskFormComponent,
-    FormsModule
+    TaskFormComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
